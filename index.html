@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Azei's Portfolio</title>
     <meta charset="UTF-8">
-    <title>azei's portfolio</title>
-    <!-- 加载必需库 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
-    <!-- 必须的结构 -->
-    <div id="pagepiling">
-        <div class="section">第一屏内容（高度自动撑满）</div>
-        <div class="section">第二屏内容（尝试向下滚动）</div>
-    </div>
-
-    <!-- 正确加载脚本 -->
-    <script src="js/pagepiling.js"></script>
-    <script>
-        // 初始化滑动
-        $(document).ready(function() {
-            $('#pagepiling').pagepiling({
-                scrollingSpeed: 700,
-                easing: 'swing'
-            });
-        });
-    </script>
+    <header>
+        <h1>欢迎你来</span></h1>
+    </header>
+    <main>
+        <p>这是我的第一个网站，正在建设中...</p>
+    </main>
 </body>
 </html>
