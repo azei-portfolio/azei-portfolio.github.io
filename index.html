@@ -27,15 +27,13 @@
 
         /* 第一页 */
         #page1 {
-            background: 
+            background: #222 
                 linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('images/bg.jpg');
+                url('images/bg.jpg') center/cover;
             color: white;
         }
         #page1 h1 {
-            font-size: clamp(2.2rem, 8vw, 3.3rem); 
-    /* 最小2rem，随视口宽度变化，最大3.5rem */
-            
+            font-size: clamp(2.2rem, 8vw, 3.3rem);
         }
         #page1 .subtitle {
             font-size: clamp(0.7rem, 3vw, 1.1rem);
@@ -43,10 +41,10 @@
 
         /* 第二页 */
         #page2 {
-        background: #f5f5f5;
-        color: #333;
-        justify-content: flex-start;
-        padding-top: 80px;
+            background: #f5f5f5;
+            color: #333;
+            justify-content: flex-start;
+            padding-top: 80px;
         }
 
         /* 导航箭头 */
@@ -56,16 +54,79 @@
             font-size: 2em;
             color: inherit;
             animation: bounce 2s infinite;
+            cursor: pointer;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
             40% {transform: translateY(-20px);}
             60% {transform: translateY(-10px);}
         }
+
+        /* 横向画廊样式 */
+        .gallery-container {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery img {
+            height: 300px;
+            width: 200px;
+            object-fit: cover;
+            scroll-snap-align: start;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 跳转卡片样式 */
+        .gallery-card-more {
+            min-width: 220px;
+            height: 300px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            cursor: pointer;
+        }
+        .gallery-card-more:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+        .more-content {
+            text-align: center;
+            padding: 25px;
+        }
+        .more-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .more-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .gallery-card-more:hover .more-icon {
+            transform: translateX(5px);
+        }
     </style>
 </head>
 <body>
-    <!-- 第一页保持不变 -->
+    <!-- 第一页 -->
     <section id="page1" class="page">
         <header>
             <h1>欢迎你来</h1>
@@ -74,9 +135,27 @@
         <a href="#page2" class="down-arrow">↓</a>
     </section>
 
-    <!-- 修改后的第二页 -->
+    <!-- 第二页 -->
     <section id="page2" class="page">
-        <h2>这是第二页</h2>
+        <h2>人像作品</h2>
+        <div class="gallery-container">
+            <div class="gallery">
+                <!-- 图片需放入images文件夹 -->
+                <img src="images/work1.jpg" alt="">
+                <img src="images/work2.jpg" alt="">
+                <img src="images/work3.jpg" alt="">
+                <img src="images/work4.jpg" alt="">
+                <img src="images/work5.jpg" alt="">
+
+                <!-- 跳转卡片 -->
+                <a href="portfolio.html" class="gallery-card-more">
+                    <div class="more-content">
+                        <div class="more-text">查看更多</div>
+                        <div class="more-icon">→</div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
 </body>
 </html>
