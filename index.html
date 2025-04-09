@@ -32,11 +32,13 @@
                 url('images/bg.jpg');
             color: white;
         }
-        /* 修正的子标题选择器 */
+        #page1 h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem); 
+    /* 最小2rem，随视口宽度变化，最大3.5rem */
+            
+        }
         #page1 .subtitle {
-            font-size: 0.8em;
-            display: block;
-            margin-top: 5px;
+            font-size: clamp(0.8rem, 3vw, 1.1rem);
         }
 
         /* 第二页 */
