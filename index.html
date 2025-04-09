@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <title>azei's portfolio</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         /* 全局样式 */
+        :root {
+            --primary-color: #222;
+            --secondary-color: #f5f5f5;
+            --text-dark: #333;
+            --text-light: white;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -27,10 +36,10 @@
 
         /* 第一页 */
         #page1 {
-            background: #222 
+            background: var(--primary-color),
                 linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                 url('images/bg.jpg') center/cover;
-            color: white;
+            color: var(--text-light);
         }
         #page1 h1 {
             font-size: clamp(2.2rem, 8vw, 3.3rem);
@@ -41,10 +50,10 @@
 
         /* 第二页 - 修改为全屏横向滑动 */
         #page2 {
-            background: #f5f5f5;
-            color: #333;
-            justify-content: center; /* 标题居中 */
-            padding: 0; /* 移除内边距 */
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            justify-content: center;
+            padding: 0;
         }
     
 
@@ -105,7 +114,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: #333;
+            color: var(--text-dark);
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
@@ -159,7 +168,7 @@
             <h1>欢迎你来</h1>
             <span class="subtitle">@azei</span>
         </header>
-        <a href="#page2" class="down-arrow">↓</a>
+        <a href="#page2" class="down-arrow" aria-label="向下滚动">↓</a>
     </section>
 
     <!-- 第二页 - 新版全屏画廊 -->
@@ -237,6 +246,15 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // 图片加载失败处理
+        document.querySelectorAll('.gallery-slide img').forEach(img => {
+            img.onerror = function() {
+                this.alt = '图片加载失败: ' + this.alt;
+                this.style.border = '2px dashed #ccc';
+                this.style.padding = '10px';
+            };
         });
     </script>
 </body>
