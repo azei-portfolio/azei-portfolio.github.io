@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>azei's portfolio</title>
+    <!-- 加载必需库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- 必须的结构 -->
     <div id="pagepiling">
-        <!-- 首页 -->
-        <div class="section">欢迎你来！</div>
-        <!-- 作品集 -->
-        <div class="section">作品展示区</div>
+        <div class="section">第一屏内容（高度自动撑满）</div>
+        <div class="section">第二屏内容（尝试向下滚动）</div>
     </div>
+
+    <!-- 正确加载脚本 -->
     <script src="js/pagepiling.js"></script>
+    <script>
+        // 初始化滑动
+        $(document).ready(function() {
+            $('#pagepiling').pagepiling({
+                scrollingSpeed: 700,
+                easing: 'swing'
+            });
+        });
+    </script>
 </body>
 </html>
