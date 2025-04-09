@@ -1,0 +1,15 @@
+body { 
+    margin: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.section {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+#pagepiling .section:nth-child(1) {
+    background: #3498db;
+}
+#pagepiling .section:nth-child(2) {
+    background: #e74c3c;
+}
