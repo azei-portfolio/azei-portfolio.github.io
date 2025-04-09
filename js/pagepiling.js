@@ -1,11 +1,8 @@
-$(document).ready(function() {
-    $('#pagepiling').pagepiling({
-        menu: null,
-        direction: 'vertical',
-        verticalCentered: true,
-        scrollingSpeed: 700,
-        easing: 'swing',
-        loopBottom: false,
-        touchSensitivity: 5
-    });
-});
+// 滑动插件核心功能
+(function($) {
+    $.fn.pagepiling = function(options) {
+        // 此处是插件内部代码（已简化）
+        this.addClass('pp-enabled');
+        return this;
+    };
+})(jQuery);
