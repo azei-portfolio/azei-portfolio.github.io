@@ -1,8 +1,11 @@
-// 滑动插件核心功能
-(function($) {
-    $.fn.pagepiling = function(options) {
-        // 此处是插件内部代码（已简化）
-        this.addClass('pp-enabled');
-        return this;
-    };
-})(jQuery);
+// 最小化滑动逻辑
+$(document).ready(function() {
+    $('.section').css('height', '100vh');
+    $(window).on('wheel', function(e) {
+        if (e.originalEvent.deltaY > 0) {
+            window.scrollBy(0, window.innerHeight);
+        } else {
+            window.scrollBy(0, -window.innerHeight);
+        }
+    });
+});
