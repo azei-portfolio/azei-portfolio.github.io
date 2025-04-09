@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人像作品-azei's portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px 20px 0;
+            background-color: #f5f5f5;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            animation: zoom 0.3s;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(0) }
+            to { transform: scale(1) }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- 示例图片项（根据实际数量增减） -->
+        <div class="gallery-item">
+            <img src="image/work1.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work2.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work3.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work4.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work5.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work6.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work7.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work8.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work9.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work10.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work11.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work12.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work13.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="image/work14.jpg" class="gallery-image" onclick="openModal(this)">
+        </div>
+        <!-- 继续添加更多作品 -->
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(element) {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-img").src = element.src;
+            document.body.style.overflow = "hidden"; // 禁止背景滚动
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.body.style.overflow = "auto"; // 恢复滚动
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                closeModal();
+            }
+        }
+
+        // ESC键关闭支持
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
