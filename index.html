@@ -4,35 +4,58 @@
     <title>azei's portfolio</title>
     <meta charset="UTF-8">
     <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 全屏背景设置 */
         body {
             font-family: 'Helvetica', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        header {
+            height: 100vh; /* 100%视窗高度 */
+            background: 
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), /* 半透明遮罩增强文字可读性 */
+                url('images/bg.jpg');
+            background-size: cover; /* 确保图片覆盖整个区域 */
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center; /* 垂直居中 */
+            align-items: center; /* 水平居中 */
+            text-align: center;
+            color: white; /* 浅色文字更适合深色背景 */
+            padding: 20px;
         }
+
+        /* 标题容器样式 */
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        /* 主标题 */
         h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* 文字阴影增强可读性 */
         }
+
+        /* 副标题 */
         .subtitle {
-            color: #7f8c8d;
-            font-weight: normal;
+            font-size: 1.5em;
+            font-weight: 300;
+            display: block; /* 使span独占一行 */
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>欢迎你来</span></h1>
+        <h1>欢迎你来</h1>
+        <span class="subtitle">@桑集</span>
     </header>
-    <main>
-        <p>这是我的第一个网站，正在建设中...</p>
-    </main>
 </body>
 </html>
