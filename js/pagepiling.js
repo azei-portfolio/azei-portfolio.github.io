@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('滑动插件已加载！');
-});
-
-window.addEventListener('wheel', function(e) {
-    if (e.deltaY > 0) {
-        console.log('向下滑动');
-    } else {
-        console.log('向上滑动');
-    }
+$(document).ready(function() {
+    $('#pagepiling').pagepiling({
+        menu: null,
+        direction: 'vertical',
+        verticalCentered: true,
+        scrollingSpeed: 700,
+        easing: 'swing',
+        loopBottom: false,
+        touchSensitivity: 5
+    });
 });
