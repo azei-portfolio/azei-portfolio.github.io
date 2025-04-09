@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* 平滑滚动 */
+            scroll-behavior: smooth;
         }
         
         /* 全屏页面公共样式 */
@@ -27,15 +27,15 @@
 
         /* 第一页 */
         #page1 {
-            background: 
-                url('images/bg.jpg');
+            background: #222 url('images/bg.jpg') center/cover no-repeat;
             color: white;
         }
         
         #page1 h1 {
             color: #FFFFFF;
-            font-size: 3em;  /* 主标题放大 */
-            margin-bottom: 10px; /* 可同步调整间距 */
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         #page1 .subtitle {
             color: #FFFFFF;
@@ -44,18 +44,16 @@
             margin-top: 5px;
         }
 
-        /* 第二页 - 复制第一页样式 */
+        /* 第二页 */
         #page2 {
-            background: 
-                url('images/bg2.jpg');
+            background: #333 url('images/bg2.jpg') center/cover no-repeat;
             color: white;
         }
         #page2 h1 {
             color: #FFFFFF;
-            font-size: 3em;  /* 主标题放大 */
-            margin-bottom: 10px; /* 可同步调整间距 */
-            text-stroke: 1px rgba(255,255,255,0.3);
-            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         #page2 .subtitle {
             color: #FFFFFF;
@@ -72,6 +70,7 @@
             color: inherit;
             animation: bounce 2s infinite;
             cursor: pointer;
+            text-decoration: none;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
@@ -79,7 +78,7 @@
             60% {transform: translateY(-10px);}
         }
 
-        /* 新增跳转按钮样式 */
+        /* 跳转按钮 */
         .action-btn {
             display: inline-block;
             margin-top: 30px;
@@ -91,6 +90,7 @@
             border: 2px solid white;
             font-weight: bold;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         .action-btn:hover {
             background: rgba(255,255,255,0.3);
@@ -108,7 +108,7 @@
         <a href="#page2" class="down-arrow">↓</a>
     </section>
 
-    <!-- 第二页 - 复制第一页内容并添加按钮 -->
+    <!-- 第二页 -->
     <section id="page2" class="page">
         <header>
             <h1>人像作品</h1>
