@@ -5,186 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人像作品-azei's portfolio</title>
     <style>
-        body {
-            margin: 0;
-            background: #f0f0f0;
-        }
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 20px;
-            text-decoration: none;
-            color: #333;
-            z-index: 100;
+        /* ===== 全屏样式 ===== */
+        html {
+            scroll-behavior: smooth;
         }
         .masonry-container {
-            padding: 20px;
-            margin: 0 auto;
-            width: 100%;
+            padding: 0;
+            max-width: none;
         }
-
-        /* 合并后的masonry-item定义 */
         .masonry-item {
-            position: relative; /* 新增定位基准 */
-            break-inside: avoid;
-            margin-bottom: 30px;
-            background: white;
-            border-radius: 8px;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
         }
-
         .masonry-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        .masonry-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* 新增item-info样式 */
-        .item-info {
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            padding: 15px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            transition: bottom 0.3s ease;
-        }
-
-        .masonry-item:hover .item-info {
-            bottom: 0;
-        }
-
         .masonry-item img {
             width: 100%;
-            height: auto;
-            vertical-align: middle;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .masonry-item:hover img {
+            transform: scale(1.03);
         }
 
-        /* 新增移动端适配 */
-        @media (max-width: 480px) {
-            .masonry-container {
-                padding: 10px;
-            }
+        /* ===== 移动端优化 ===== */
+        @media (max-width: 768px) {
             .masonry-item {
-                margin-bottom: 15px;
-                border-radius: 4px;
+                height: 80vh;
             }
             .back-btn {
-                padding: 8px 15px;
-                font-size: 14px;
+                background: rgba(0,0,0,0.7);
+                color: white;
+                backdrop-filter: blur(5px);
             }
-            .item-info {
-                padding: 10px;
-                font-size: 12px;
-            }
+        }
+
+        /* ===== 进度条 ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #ff6b6b;
+            z-index: 1000;
+            transition: width 0.3s ease;
         }
     </style>
 </head>
 <body>
+    <div class="scroll-progress"></div>
     <a href="index.html" class="back-btn">← 返回首页</a>
+    
     <div class="masonry-container">
         <!-- 示例修改第一个项目，其他请按此格式补充 -->
         <div class="masonry-item">
             <img src="images/portfolio1/work1.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work2.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work3.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work4.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work5.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work6.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work7.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work8.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work9.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work10.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work11.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work12.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work13.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
         <div class="masonry-item">
             <img src="images/portfolio1/work14.jpg" 
-                 alt=""  <!-- 请补充所有alt描述 -->
+                 alt=""  <!-- 请补充所有alt描述 --
                  loading="lazy"
             >
         </div>
 
     </div>
     <script>
+        // 滚动进度条
+        window.addEventListener('scroll', () => {
+            const progress = document.querySelector('.scroll-progress');
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = `${(window.scrollY / totalHeight) * 100}%`;
+        });
+
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (['ArrowDown', 'PageDown'].includes(e.key)) {
+                window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+            }
+            if (['ArrowUp', 'PageUp'].includes(e.key)) {
+                window.scrollBy({ top: -window.innerHeight * 0.9, behavior: 'smooth' });
+            }
+        });
+
+        // 渐显效果
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -193,11 +180,8 @@
                     }
                 })
             }, { threshold: 0.1 })
-
-            document.querySelectorAll('.masonry-item').forEach(item => {
-                observer.observe(item)
-            })
-        })
+            document.querySelectorAll('.masonry-item').forEach(observer.observe)
+        });
     </script>
 </body>
 </html>
