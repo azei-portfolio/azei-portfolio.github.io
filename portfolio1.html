@@ -5,163 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人像作品-azei's portfolio</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px 20px 0;
-            background-color: #f5f5f5;
+            margin: 0;
+            background: #f0f0f0;
         }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
+        .masonry-container {
+            column-count: 3;
+            column-gap: 20px;
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            background: white;
             border-radius: 8px;
-            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
             transition: transform 0.3s ease;
         }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
+        .masonry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-
-        .gallery-image {
+        .masonry-item img {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
+            height: auto;
+            vertical-align: middle;
         }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            overflow: auto;
+        @media (max-width: 768px) {
+            .masonry-container { column-count: 2; }
         }
-
-        .modal-content {
-            margin: 5% auto;
-            display: block;
-            width: 80%;
-            max-width: 1200px;
-            animation: zoom 0.3s;
-        }
-
-        @keyframes zoom {
-            from { transform: scale(0) }
-            to { transform: scale(1) }
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            color: #bbb;
+        @media (max-width: 480px) {
+            .masonry-container { column-count: 1; }
         }
     </style>
 </head>
 <body>
-    <div class="gallery">
-        <!-- 示例图片项（根据实际数量增减） -->
-        <div class="gallery-item">
-            <img src="images/work1.jpg" class="gallery-image" onclick="openModal(this)">
+    <div class="masonry-container">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work1.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work2.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work2.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work3.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work3.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work4.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work4.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work5.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work5.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work6.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work6.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work7.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work7.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work8.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work8.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work9.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work9.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work10.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work10.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work11.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work11.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work12.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work12.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work13.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work13.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/work14.jpg" class="gallery-image" onclick="openModal(this)">
+        <div class="masonry-item">
+            <img src="images/portfolio1/work14.jpg" 
+                 alt=""
+                 loading="lazy">
+            <div class="item-info">
+            </div>
         </div>
-        <!-- 继续添加更多作品 -->
+        <!-- 建议至少10个不同高度的图片项 -->
     </div>
-
-    <div id="modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-img">
-    </div>
-
-    <script>
-        function openModal(element) {
-            document.getElementById("modal").style.display = "block";
-            document.getElementById("modal-img").src = element.src;
-            document.body.style.overflow = "hidden"; // 禁止背景滚动
-        }
-
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-            document.body.style.overflow = "auto"; // 恢复滚动
-        }
-
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                closeModal();
-            }
-        }
-
-        // ESC键关闭支持
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>
