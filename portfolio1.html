@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人像作品-azei's portfolio</title>
     <style>
+        body {
+            background: #000; /* 将整个网页背景设为纯黑 */
+            margin: 0;        /* 你原有的代码保持不变 */
+        }
         .back-btn {
             position: fixed;
             bottom: 20px;    /* 从顶部改为底部 */
             left: 50%;       /* 水平居中定位 */
             transform: translateX(-50%); /* 精确居中 */
             padding: 12px 30px;
-            background: rgba(255,255,255,0.9);
+            background: rgba(0, 0, 0, 0.5);  /* 修改为黑色半透明（原白色） */
+            color: #fff;
             border-radius: 30px;
             text-decoration: none;
-            color: #333;
             z-index: 1000;    /* 提高层级确保在最前 */
             box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* 新增投影 */
             transition: all 0.3s ease;
@@ -22,7 +26,7 @@
 
         /* 悬停效果优化 */
         .back-btn:hover {
-            background: rgba(255,255,255,1);
+            background: rgba(0, 0, 0, 0.7);
             transform: translateX(-50%) scale(1.05);
         }
 
@@ -55,6 +59,7 @@
             scroll-behavior: smooth;
         }
         .masonry-container {
+            background: #000;
             padding: 0;
             max-width: none;
         }
