@@ -15,7 +15,7 @@
             left: 50%;       /* 水平居中定位 */
             transform: translateX(-50%); /* 精确居中 */
             padding: 12px 30px;
-            background: rgba(0, 0, 0, 0.5);  /* 修改为黑色半透明（原白色） */
+            background: rgba(0, 0, 0, 0.3);  /* 修改为黑色半透明（原白色） */
             color: #fff;
             border-radius: 30px;
             text-decoration: none;
@@ -37,39 +37,54 @@
             width: 100%;
             max-width: 1920px;  /* 新增：限制最大宽度 */
             margin: 0 auto;     /* 新增：水平居中 */
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid #333; /* 用边框替代间距 */
         }
 
         .masonry-item img {
-            width: 100%;       /* 固定宽度为容器100% */
+            width: 80%;       /* 固定宽度为容器100% */
             height: auto;      /* 高度自适应 */
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* 更流畅的动画曲线 */
             object-fit: cover; /* 裁剪适配 */
             display: block;    /* 消除图片底部间隙 */
             margin: 0 auto;    /* 水平居中 */
+            vertical-align: bottom; /* 消除图片底部间隙 */
         }
-
-        /* ===== 新增响应式适配 ===== */
-        @media (max-width: 1920px) {
-            .masonry-item img {
-                max-width: 1920px; /* 不超过原始尺寸 */
-            }
+        .masonry-item:last-child {
+            border-bottom: none; /* 移除最后一个边框 */
         }
-
-        /* ===== 保持原有核心样式 ===== */
+                /* ===== 保持原有核心样式 ===== */
         html {
             scroll-behavior: smooth;
         }
         .masonry-container {
             background: #000;
             padding: 0;
-            max-width: none;
+            width: 100%;
+            max-width: 1920px;       /* 限制最大宽度 */
+            margin: 0 auto;
         }
         .masonry-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .masonry-item:hover img {
-            transform: scale(1.03);
+        
+        /* ===== 响应式优化 ===== */
+        @media (max-width: 1920px) {
+            .masonry-item img {
+                min-height: 80vh; /* 保持最小高度 */
+                object-fit: contain;
+            }
         }
+
+        @media (max-width: 768px) {
+            .masonry-item img {
+                min-height: 60vh; /* 移动端调整高度 */
+            }
+        }
+
     </style>
 </head>
 <body>
