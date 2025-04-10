@@ -9,6 +9,17 @@
             margin: 0;
             background: #f0f0f0;
         }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            z-index: 100;
+        }
         .masonry-container {
             column-count: 3;
             column-gap: 20px;
@@ -44,6 +55,7 @@
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-btn">← 返回首页</a>
     <div class="masonry-container">
         <div class="masonry-item">
             <img src="images/portfolio1/work1.jpg" 
