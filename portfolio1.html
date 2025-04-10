@@ -5,38 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人像作品-azei's portfolio</title>
     <style>
-        /* ===== 关键修改点 ===== */
+        /* ===== 关键修改部分 ===== */
+        .masonry-item {
+            background: none; /* 移除黑色背景 */
+            min-height: 100vh;
+            width: 100%;
+            max-width: 1920px;  /* 新增：限制最大宽度 */
+            margin: 0 auto;     /* 新增：水平居中 */
+        }
+
+        .masonry-item img {
+            width: 100%;       /* 固定宽度为容器100% */
+            height: auto;      /* 高度自适应 */
+            object-fit: cover; /* 裁剪适配 */
+            display: block;    /* 消除图片底部间隙 */
+            margin: 0 auto;    /* 水平居中 */
+        }
+
+        /* ===== 新增响应式适配 ===== */
+        @media (max-width: 1920px) {
+            .masonry-item img {
+                max-width: 1920px; /* 不超过原始尺寸 */
+            }
+        }
+
+        /* ===== 保持原有核心样式 ===== */
         html {
             scroll-behavior: smooth;
         }
-
         .masonry-container {
             padding: 0;
             max-width: none;
         }
-
-        .masonry-item {
-            position: relative;
-            width: 100vw;
-            min-height: 100vh; /* 改为min-height */
-            margin: 0;
-            overflow: visible; /* 关闭溢出隐藏 */
-            display: flex;     /* 新增flex布局 */
-            align-items: center; /* 垂直居中 */
-            justify-content: center; /* 水平居中 */
-            background: #000;  /* 添加临时背景 */
-        }
-
-        .masonry-item img {
-            width: auto;       /* 改为自动宽度 */
-            height: auto;      /* 改为自动高度 */
-            max-width: 100%;   /* 防止溢出 */
-            max-height: 100vh; /* 限制最大高度 */
-            object-fit: contain; /* 完整显示图片 */
-            transition: transform 0.8s ease;
-        }
-
-        /* ===== 其他保持原有样式 ===== */
         .masonry-item.visible {
             opacity: 1;
             transform: translateY(0);
